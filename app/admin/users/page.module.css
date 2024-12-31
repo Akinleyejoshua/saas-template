@@ -1,0 +1,162 @@
+/* Dashboard.module.css */
+.dashboard {
+    min-height: 100vh;
+    background: #f5f7fa;
+}
+
+.content {
+    margin-left: 250px;
+    margin-top: 70px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.content.expanded {
+    margin-left: 0;
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
+
+/* Add to page.module.css */
+.tableContainer {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.tableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.tableHeader h1 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.addButton {
+    background: royalblue;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.addButton:hover {
+    background: #345dc9;
+    transform: translateY(-2px);
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.table th {
+    background: #f8f9fa;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #444;
+}
+
+.table td {
+    padding: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.active {
+    background: #e6f4ea;
+    color: #1e7e34;
+}
+
+.banned {
+    background: #fbe9e7;
+    color: #d84315;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.actionButton {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+    background: #f0f0f0;
+    color: royalblue;
+}
+
+.actionButton.delete:hover {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.actionButton.unban:hover {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+@media (max-width: 768px) {
+    .tableContainer {
+        padding: 1rem;
+    }
+
+    .tableHeader {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .table th, .table td {
+        padding: 0.75rem;
+    }
+
+    .actions {
+        gap: 0.25rem;
+    }
+
+    .actionButton {
+        width: 28px;
+        height: 28px;
+    }
+}

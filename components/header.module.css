@@ -1,0 +1,173 @@
+/* Header.module.css */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 250px;
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.search {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.search input {
+    width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.iconButton {
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    place-items: center;
+}
+
+.iconButton:hover {
+    background: #f5f5f5;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: royalblue;
+    color: white;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    position: relative;
+}
+
+.profileButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.profileButton:hover {
+    background: #f5f5f5;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.profileMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    min-width: 200px;
+    margin-top: 0.5rem;
+}
+
+.profileMenu a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.profileMenu a:hover {
+    background: #f5f5f5;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+.menuButton {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menuButton:hover {
+    background: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+    .mobileMenu {
+        display: block;
+    }
+
+    .header {
+        padding: 0 1rem;
+        justify-content: space-between;
+    }
+
+    .menuButton {
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        left: 0;
+        padding: 0 1rem;
+    }
+
+    .search {
+        display: none;
+    }
+}

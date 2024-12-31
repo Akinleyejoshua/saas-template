@@ -1,0 +1,135 @@
+.header {
+ background: rgba(75, 107, 183, 0); /* Matches hero gradient start #4b6cb7 */
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(24, 40, 72, 0);
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(75, 108, 183, 0.98);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navItems {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.navItems li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.navItems li a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.navItems li a:hover:after {
+  width: 100%;
+}
+
+.icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.navItems li a:hover .icon {
+  transform: translateY(-2px);
+}
+
+.logo a {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navItems li a:hover {
+  opacity: 0.8;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navItems {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+background: rgba(75, 108, 183, 0.95);
+    backdrop-filter: blur(8px);
+    transform: translateY(-10px);
+    opacity: 0;
+    padding: 1rem;
+    text-align: center;
+    
+}
+  .navItems.active {
+    transform: translateY(0);
+    opacity: 1;
+    display: flex;
+  }
+
+  .navItems {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}

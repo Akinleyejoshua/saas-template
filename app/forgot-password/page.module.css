@@ -1,0 +1,150 @@
+/* forgot-password.module.css */
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+    padding: 2rem;
+}
+
+.formWrapper {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.5s ease;
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.inputGroup {
+    margin-bottom: 1.5rem;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    left: 1rem;
+    color: #666;
+}
+
+.inputWrapper input {
+    width: 100%;
+    padding: 0.8rem;
+    padding-left: 3rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.inputWrapper input:focus {
+    outline: none;
+    border-color: #4b6cb7;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+}
+
+.successMessage {
+    text-align: center;
+    color: #27ae60;
+    padding: 2rem;
+    background: #f0f9f4;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.successMessage p {
+    margin-bottom: 0.5rem;
+}
+
+.backToLogin {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+}
+
+.backToLogin a {
+    color: #4b6cb7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.backToLogin a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .formWrapper {
+        padding: 2rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .formWrapper {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .inputWrapper input {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,125 @@
+/* page.module.css */
+.dashboard {
+    min-height: 100vh;
+    background: #f5f7fa;
+}
+
+.content {
+    margin-left: 250px;
+    margin-top: 70px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.content.expanded {
+    margin-left: 0;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.metricCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.metricCard h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.metricCard p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4b6cb7;
+}
+
+.icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #4b6cb7;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.chartCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.chartCard h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.accountUsage {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.accountUsage h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.usageDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.usageItem {
+    text-align: center;
+}
+
+.usageItem h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.usageBar {
+    background: #e1e1e1;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.usageFill {
+    background: #4b6cb7;
+    height: 10px;
+    border-radius: 8px 0 0 8px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .charts {
+        grid-template-columns: 1fr;
+    }
+
+    .usageDetails {
+        grid-template-columns: 1fr;
+    }
+}
