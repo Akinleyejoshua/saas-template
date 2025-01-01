@@ -40,14 +40,14 @@ const Header = ({ toggleSidebar }) => {
 
 
             <div className={styles.actions}>
-                <button className={styles.iconButton}>
+                <button className={styles.iconButton} onClick={() => router.push("/notifications")}>
                     <MdOutlineNotifications />
                     <span className={styles.badge}>3</span>
                 </button>
-                <button className={styles.iconButton}>
+                {/* <button className={styles.iconButton}>
                     <MdOutlineMessage />
                     <span className={styles.badge}>5</span>
-                </button>
+                </button> */}
 
                 <div className={styles.profile}>
                     <button
@@ -67,6 +67,7 @@ const Header = ({ toggleSidebar }) => {
 
                     {showProfile && (
                         <div className={styles.profileMenu}>
+                            <a href="/admin">Admin</a>
                             <a href="/profile">My Profile</a>
                             <a href="/settings">Settings</a>
                             <a href="/logout">Logout</a>

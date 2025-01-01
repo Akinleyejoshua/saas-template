@@ -22,26 +22,30 @@
     }
 }
 
-
-/* page.module.css */
+/* Add to page.module.css */
 .pageHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 2rem;
 }
 
 .pageHeader h1 {
     font-size: 1.8rem;
     color: #333;
+    margin-bottom: 1.5rem;
 }
 
-.searchBox {
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.searchBox, .filterBox {
     position: relative;
-    width: 300px;
+    flex: 1;
+    max-width: 300px;
 }
 
-.searchIcon {
+.searchIcon, .filterIcon {
     position: absolute;
     left: 1rem;
     top: 50%;
@@ -49,7 +53,7 @@
     color: #666;
 }
 
-.searchBox input {
+.searchBox input, .filterBox select {
     width: 100%;
     padding: 0.8rem;
     padding-left: 2.5rem;
@@ -59,7 +63,7 @@
     transition: all 0.3s ease;
 }
 
-.searchBox input:focus {
+.searchBox input:focus, .filterBox select:focus {
     outline: none;
     border-color: royalblue;
     box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.1);
@@ -68,7 +72,7 @@
 .tableContainer {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow-x: auto;
 }
 
@@ -107,60 +111,23 @@
     color: #1e7e34;
 }
 
-.banned {
+.expired {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.cancelled {
     background: #fee2e2;
     color: #dc2626;
-}
-
-.actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.actionButton {
-    background: none;
-    border: none;
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #666;
-    transition: all 0.3s ease;
-}
-
-.actionButton:hover {
-    background: #f0f0f0;
-    color: royalblue;
-}
-
-.actionButton.delete:hover {
-    background: #fee2e2;
-    color: #dc2626;
-}
-
-.actionButton.unban:hover {
-    background: #e6f4ea;
-    color: #1e7e34;
-}
-
-@media (max-width: 1024px) {
-    .searchBox {
-        width: 250px;
-    }
 }
 
 @media (max-width: 768px) {
-    .pageHeader {
+    .filters {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
     }
 
-    .searchBox {
-        width: 100%;
+    .searchBox, .filterBox {
+        max-width: 100%;
     }
 
     .table {
@@ -174,10 +141,5 @@
     .status {
         padding: 0.3rem 0.6rem;
         font-size: 0.8rem;
-    }
-
-    .actionButton {
-        width: 28px;
-        height: 28px;
     }
 }

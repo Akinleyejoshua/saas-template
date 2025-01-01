@@ -15,14 +15,15 @@ import {
 } from 'react-icons/md';
 import styles from './sidebar.module.css';
 import Logo from "@/src/logo.jpg";
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
     const router = useRouter();
+    const pathname = usePathname();
 
     const menuItems = [
         { title: 'Dashboard', icon: <MdOutlineDashboard />, path: `/dashboard` },
-        { title: 'subscription', icon: <MdOutlineMonetizationOn />, path: '/subscription' },
+        { title: 'Subscription', icon: <MdOutlineMonetizationOn />, path: '/subscription' },
         // { title: 'Messages', icon: <MdOutlineMessage />, path: '/messages' },
         // { title: 'Analytics', icon: <MdOutlineAnalytics />, path: '/analytics' },
         // { title: 'Files', icon: <MdOutlineFolder />, path: '/files' },
@@ -42,10 +43,39 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
             <nav className={styles.menu}>
                 {menuItems.map((item, index) => (
-                    <Link href={item.path} key={index} className={styles.menuItem}>
-                        {item.icon}
-                        <span>{item.title}</span>
-                    </Link>
+                    <div key={index} className={styles.menuWrapper}>
+                        {item.submenu ? (
+                            <>
+                                <button
+                                    className={`${styles.menuItem} ${openDropdown === item.title ? styles.active : ''}`}
+                                    onClick={() => handleDropdown(item.title)}
+                                >
+                                    {item.icon}
+                                    <span>{item.title}</span>
+                                    <MdKeyboardArrowDown className={`${styles.arrow} ${openDropdown === item.title ? styles.rotate : ''}`} />
+                                </button>
+                                <div className={`${styles.submenu} ${openDropdown === item.title ? styles.show : ''}`}>
+                                    {item.submenu.map((subItem, subIndex) => (
+                                        <Link
+                                            href={subItem.path}
+                                            key={subIndex}
+                                            className={`${styles.submenuItem} ${pathname === subItem.path ? styles.active : ''}`}
+                                        >
+                                            {subItem.title}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </>
+                        ) : (
+                            <Link
+                                href={item.path}
+                                className={`${styles.menuItem} ${pathname === item.path ? styles.active : ''}`}
+                            >
+                                {item.icon}
+                                <span>{item.title}</span>
+                            </Link>
+                        )}
+                    </div>
                 ))}
             </nav>
 
