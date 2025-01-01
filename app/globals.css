@@ -15,10 +15,14 @@
   /* font-family: "Roboto Mono", monospace; */
   font-optical-sizing: auto;
   scroll-behavior: smooth;
-  
 }
 
 
 .btn{
   cursor: pointer;
+}
+
+*:not(span){
+  font-size: 14px;
+
 }

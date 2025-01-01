@@ -12,7 +12,8 @@ import {
     MdOutlineLogout,
     MdChevronLeft,
     MdOutlineMonetizationOn,
-    MdKeyboardArrowDown
+    MdKeyboardArrowDown,
+    MdOutlineEmail
 } from 'react-icons/md';
 import styles from './sidebar.module.css';
 import Logo from "@/src/logo.jpg";
@@ -33,6 +34,11 @@ const AdminSidebar = ({ isOpen, toggleSidebar }) => {
             title: 'Users',
             icon: <MdOutlinePersonSearch />,
             path: '/admin/users'
+        },
+        {
+            title: 'Mailer',
+            icon: <MdOutlineEmail />,
+            path: '/admin/emailer'
         },
         {
             title: 'Pricing',

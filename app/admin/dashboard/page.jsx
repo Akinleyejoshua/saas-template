@@ -63,14 +63,14 @@ const Dashboard = () => {
                     <div className={styles.chartCard}>
                         <h3>Revenue Over Time</h3>
                         <ResponsiveContainer width="100%" height={300}>
-                            <BarChart data={barData}>
+                            <LineChart data={barData}>
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <XAxis dataKey="name" />
                                 <YAxis />
                                 <Tooltip />
                                 <Legend />
-                                <Bar dataKey="revenue" fill="rgba(75, 192, 192, 0.6)" />
-                            </BarChart>
+                                <Line type="monotone" dataKey="revenue" stroke="rgba(75, 192, 192, 1)" />
+                            </LineChart>
                         </ResponsiveContainer>
                     </div>
                     <div className={styles.chartCard}>
