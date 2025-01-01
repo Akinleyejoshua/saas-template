@@ -10,7 +10,8 @@ import {
     MdOutlineAnalytics,
     MdOutlineFolder,
     MdOutlineLogout,
-    MdChevronLeft
+    MdChevronLeft,
+    MdOutlineMonetizationOn
 } from 'react-icons/md';
 import styles from './sidebar.module.css';
 import Logo from "@/src/logo.jpg";
@@ -21,11 +22,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
     const menuItems = [
         { title: 'Dashboard', icon: <MdOutlineDashboard />, path: `/dashboard` },
-        { title: 'Interviews', icon: <MdOutlinePersonSearch />, path: '/interviews' },
-        { title: 'Messages', icon: <MdOutlineMessage />, path: '/messages' },
-        { title: 'Analytics', icon: <MdOutlineAnalytics />, path: '/analytics' },
-        { title: 'Files', icon: <MdOutlineFolder />, path: '/files' },
-        { title: 'Settings', icon: <MdOutlineSettings />, path: '/settings' },
+        { title: 'subscription', icon: <MdOutlineMonetizationOn />, path: '/subscription' },
+        // { title: 'Messages', icon: <MdOutlineMessage />, path: '/messages' },
+        // { title: 'Analytics', icon: <MdOutlineAnalytics />, path: '/analytics' },
+        // { title: 'Files', icon: <MdOutlineFolder />, path: '/files' },
+        // { title: 'Settings', icon: <MdOutlineSettings />, path: '/settings' },
     ];
 
     return (

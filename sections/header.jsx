@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from './header.module.css';
 import { AiOutlineHome, AiOutlineInfoCircle } from 'react-icons/ai';
-import { MdOutlineBusinessCenter } from 'react-icons/md';
+import { MdOutlineBusinessCenter, MdOutlineMonetizationOn, MdOutlinePerson4 } from 'react-icons/md';
 import { RiContactsLine } from 'react-icons/ri';
 import { HiOutlineMenu } from 'react-icons/hi';
 
@@ -27,44 +27,56 @@ const Header = () => {
 
     return (
         <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>            <nav className={styles.nav}>
-                <div className={styles.logo}>
-                    <Link href="/">Logo</Link>
-                </div>
+            <div className={styles.logo}>
+                <Link href="/">Logo</Link>
+            </div>
 
-                <button
-                    className={styles.hamburger}
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    <HiOutlineMenu size={24} color="white" />
-                </button>
+            <button
+                className={styles.hamburger}
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                <HiOutlineMenu size={24} color="white" />
+            </button>
 
-                <ul className={`${styles.navItems} ${isOpen ? styles.active : ''}`}>
-                    <li>
-                        <Link href="/">
-                            <AiOutlineHome className={styles.icon} />
-                            <span>Home</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#about">
-                            <AiOutlineInfoCircle className={styles.icon} />
-                            <span>About</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#services">
-                            <MdOutlineBusinessCenter className={styles.icon} />
-                            <span>Services</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#contact">
-                            <RiContactsLine className={styles.icon} />
-                            <span>Contact</span>
-                        </Link>
-                    </li>
-                </ul>
-            </nav>
+            <ul className={`${styles.navItems} ${isOpen ? styles.active : ''}`}>
+                <li>
+                    <Link href="/">
+                        <AiOutlineHome className={styles.icon} />
+                        <span>Home</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="#about">
+                        <AiOutlineInfoCircle className={styles.icon} />
+                        <span>About</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="#services">
+                        <MdOutlineBusinessCenter className={styles.icon} />
+                        <span>Services</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="#pricing">
+                        <MdOutlineMonetizationOn className={styles.icon} />
+                        <span>Pricing</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="#reviews">
+                        <MdOutlinePerson4 className={styles.icon} />
+                        <span>Reviews</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="#contact">
+                        <RiContactsLine className={styles.icon} />
+                        <span>Contact</span>
+                    </Link>
+                </li>
+            </ul>
+        </nav>
         </header>
     );
 };

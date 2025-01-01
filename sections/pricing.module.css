@@ -1,0 +1,186 @@
+/* pricing.module.css */
+.pricing {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.plan {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.popular {
+    border: 2px solid royalblue;
+}
+
+.popularBadge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: royalblue;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.plan h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.amount {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1;
+    margin: 0 0.2rem;
+}
+
+.period {
+    color: #666;
+}
+
+.description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    color: #444;
+}
+
+.checkIcon {
+    color: #4CAF50;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.closeIcon {
+    color: #f44336;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.notIncluded {
+    color: #999 !important;
+}
+
+.button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: royalblue;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: #345dc9;
+    transform: translateY(-2px);
+}
+
+.popular .button {
+    background: #345dc9;
+}
+
+@media (max-width: 1024px) {
+    .plans {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing {
+        padding: 3rem 1rem;
+    }
+
+    .header h2 {
+        font-size: 2rem;
+    }
+
+    .plan {
+        padding: 1.5rem;
+    }
+
+    .amount {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h2 {
+        font-size: 1.8rem;
+    }
+
+    .plans {
+        grid-template-columns: 1fr;
+    }
+}

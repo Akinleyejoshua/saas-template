@@ -1,170 +1,171 @@
 /* footer.module.css */
 .footer {
-    background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-    color: white;
-    padding: 4rem 2rem 2rem;
+  background: linear-gradient(135deg, #2a2a2b 0%, #141d2e 100%);
+  color: white;
+  padding: 4rem 2rem 2rem;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr;
-    gap: 4rem;
-    margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  gap: 4rem;
+  margin-bottom: 3rem;
 }
 
 .company {
-    max-width: 300px;
+  max-width: 300px;
 }
 
 .logo {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .description {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .social {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .social a {
-    color: white;
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
 }
 
 .social a:hover {
-    transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 .links h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .links ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .links ul li {
-    margin-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .links ul li a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .links ul li a:hover {
-    color: white;
+  color: white;
 }
 
 .newsletter h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .newsletter p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
 }
 
 .inputGroup {
-    display: flex;
-    gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .inputGroup input {
-    flex: 1;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 .inputGroup input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .inputGroup button {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    background: white;
-    color: #182848;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  background: white;
+  color: #182848;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .inputGroup button:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .bottom {
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 @media (max-width: 1024px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-    }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
 
-    .company {
-        grid-column: 1 / -1;
-        max-width: 100%;
-        text-align: center;
-    }
+  .company {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    text-align: center;
+  }
 
-    .social {
-        justify-content: center;
-    }
+  .social {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
-    .links, .newsletter {
-        text-align: center;
-    }
+  .links,
+  .newsletter {
+    text-align: center;
+  }
 
-    .inputGroup {
-        flex-direction: column;
-        max-width: 300px;
-        margin: 0 auto;
-    }
+  .inputGroup {
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 480px) {
-    .footer {
-        padding: 3rem 1rem 1.5rem;
-    }
+  .footer {
+    padding: 3rem 1rem 1.5rem;
+  }
 
-    .logo {
-        font-size: 1.5rem;
-    }
+  .logo {
+    font-size: 1.5rem;
+  }
 
-    .social a {
-        font-size: 1.3rem;
-    }
+  .social a {
+    font-size: 1.3rem;
+  }
 }

@@ -1,7 +1,7 @@
 .header {
- background: rgba(75, 107, 183, 0); /* Matches hero gradient start #4b6cb7 */
+ background: rgba(28, 30, 36, 0); /* Matches hero gradient start #4b6cb7 */
   backdrop-filter: blur(8px);
-  padding: 1rem 2rem;
+  padding: 2rem;
   position: absolute;
   width: 100%;
   top: 0;
@@ -11,14 +11,17 @@
 }
 
 .scrolled {
-position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(75, 108, 183, 0.98);
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(28, 34, 48, 0.98);
+  padding: 1rem 2rem;
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
-
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .nav {

@@ -1,0 +1,214 @@
+/* Dashboard.module.css */
+.dashboard {
+    min-height: 100vh;
+    background: #f5f7fa;
+}
+
+.content {
+    margin-left: 250px;
+    margin-top: 70px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.content.expanded {
+    margin-left: 0;
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
+
+/* page.module.css */
+.container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.subscriptionCard {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.statusSection {
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    padding: 2rem;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.active {
+    background: rgba(46, 213, 115, 0.2);
+    color: #2ed573;
+}
+
+.timeline {
+    margin-top: 2rem;
+}
+
+.timelineInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.progressBar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #2ed573;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.planDetails {
+    padding: 2rem;
+}
+
+.planHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.planHeader h2 {
+    color: #333;
+    margin: 0;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4b6cb7;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.checkIcon {
+    color: #2ed573;
+}
+
+.dates {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dates span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.dates p {
+    color: #333;
+    font-weight: 500;
+    margin: 0.25rem 0 0 0;
+}
+
+.renewButton {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #4b6cb7;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.renewButton:hover {
+    background: #345dc9;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .planHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .dates {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .statusSection {
+        padding: 1.5rem;
+    }
+
+    .planDetails {
+        padding: 1.5rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}

@@ -32,7 +32,7 @@ const About = () => {
                             <Image
                                 src={Logo}
                                 alt="Our Team"
-                                width={500}
+                                width={400}
                                 height={400}
                                 className={styles.image}
                             />

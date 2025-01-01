@@ -6,17 +6,22 @@ import {
     MdOutlineMessage,
     MdKeyboardArrowDown,
     MdOutlineMenu,
+    MdOutlineArrowBackIosNew,
 
 } from 'react-icons/md';
 import Image from 'next/image';
 import styles from './header.module.css';
 import Logo from "@/src/logo.jpg";
+import { useRouter } from 'next/navigation';
 
 const Header = ({ toggleSidebar }) => {
     const [showProfile, setShowProfile] = useState(false);
+    const router = useRouter();
 
     return (
         <header className={styles.header}>
+            <MdOutlineArrowBackIosNew className='btn' onClick={() => router.back()} />
+
             <div className={styles.mobileMenu}>
                 <button
                     className={styles.menuButton}
@@ -27,10 +32,12 @@ const Header = ({ toggleSidebar }) => {
                 </button>
             </div>
 
-            <div className={styles.search}>
+            {/* <div className={styles.search}>
                 <MdOutlineSearch className={styles.searchIcon} />
                 <input type="text" placeholder="Search..." />
-            </div>
+            </div> */
+            }
+
 
             <div className={styles.actions}>
                 <button className={styles.iconButton}>

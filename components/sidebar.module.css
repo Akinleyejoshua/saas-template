@@ -12,6 +12,8 @@
     flex-direction: column;
     transition: all 0.3s ease;
     z-index: 1000;
+      background: linear-gradient(135deg, #2a2a2b 0%, #141d2e 100%);
+
 }
 
 .sidebar.open {
