@@ -184,3 +184,48 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Add to your CSS */
+.priceContainer {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.prices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.originalPrice {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.discountedPrice {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.period {
+    color: #64748b;
+    align-self: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.savings {
+    display: inline-block;
+    background: #e6f4ea;
+    color: #1e7e34;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}

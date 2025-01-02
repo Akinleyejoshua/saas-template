@@ -18,7 +18,10 @@ const Page = () => {
             name: 'Basic',
             price: '29',
             period: '/month',
+            discountedPrice: '24',
+            period: '/month',
             description: 'Perfect for small businesses',
+            discountPercentage: '17',
             features: [
                 '5 Team Members',
                 '10GB Storage',
@@ -36,6 +39,8 @@ const Page = () => {
             name: 'Professional',
             price: '79',
             period: '/month',
+            discountedPrice: '59',
+            period: '/month',
             description: 'Ideal for growing teams',
             popular: true,
             features: [
@@ -52,6 +57,8 @@ const Page = () => {
         {
             name: 'Enterprise',
             price: '149',
+            period: '/month',
+            discountedPrice: '119',
             period: '/month',
             description: 'For large organizations',
             features: [
@@ -93,10 +100,15 @@ const Page = () => {
                                 >
                                     {plan.popular && <span className={styles.popularBadge}>Most Popular</span>}
                                     <h3>{plan.name}</h3>
-                                    <div className={styles.price}>
-                                        <span className={styles.currency}>$</span>
-                                        <span className={styles.amount}>{plan.price}</span>
-                                        <span className={styles.period}>{plan.period}</span>
+                                    <div className={styles.priceContainer}>
+                                        <div className={styles.prices}>
+                                            <span className={styles.originalPrice}>${plan.price}</span>
+                                            <span className={styles.discountedPrice}>${plan.discountedPrice}</span>
+                                            <span className={styles.period}>{plan.period}</span>
+                                        </div>
+                                        <div className={styles.savings}>
+                                            Save {plan.discountPercentage}%
+                                        </div>
                                     </div>
                                     <p className={styles.description}>{plan.description}</p>
                                     <ul className={styles.features}>
