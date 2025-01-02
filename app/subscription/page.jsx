@@ -18,7 +18,7 @@ const Page = () => {
         status: 'Active',
         plan: 'Professional',
         startDate: '2025-01-01',
-        endDate: '2025-01-01',
+        endDate: '2025-01-03',
         price: 79,
         features: [
             'Unlimited Projects',
@@ -93,7 +93,7 @@ const Page = () => {
                                 </div>
                             </div>
 
-                            {daysRemaining == 0 &&
+                            {daysRemaining <= 0 &&
                                 <button onClick={() => router.push("/renew-sub")} className={styles.renewButton}>
                                     <MdOutlinePayment />
                                     Renew Subscription
