@@ -2,16 +2,19 @@
 "use client";
 // pages/dashboard.jsx
 import { useEffect, useState } from "react";
-import { usePaystackPayment } from 'react-paystack';
 
+// import { PaystackButton } from 'react-paystack';
 import styles from "./page.module.css";
 import Sidebar from "@/components/sidebar";
 import Header from "@/components/header";
 import { useRouter } from "next/navigation";
 import { MdOutlineCheck, MdOutlineClose } from 'react-icons/md';
+import dynamic from "next/dynamic"
 
 const Page = () => {
     const router = useRouter();
+
+    const PaystackButton = dynamic(() => import('react-paystack').then(mode => mode.PaystackButton), {ssr:false})
 
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const plans = [
@@ -105,7 +108,7 @@ const Page = () => {
         const [error, setError] = useState(null);
         const [loading, setLoading] = useState(false);
 
-        const paymentConfig = {
+        const config = {
             reference: new Date().getTime().toString(),
             email: "akinleyejoshua.dev@gmail.com",
             amount: plan.discountedPrice * 100 * rate,
@@ -115,42 +118,33 @@ const Page = () => {
             }
         };
 
-        const initializePayment = usePaystackPayment(paymentConfig);
+        // Add payment handlers
+        const onSuccess = (reference) => {
+            setLoading(false);
+            console.log("Payment successful!", reference);
+            // Handle successful payment (e.g. update subscription status)
+        };
 
-        const handlePayment = () => {
-            try {
-                setLoading(true);
-                setError(null);
-                initializePayment(
-                    (reference) => {
-                        console.log("Payment successful!", reference);
-                        setLoading(false);
-                        router.push("/subscription");
-                    },
-                    () => {
-                        console.log("Payment window closed");
-                        setLoading(false);
-                    }
-                );
-            } catch (err) {
-                setError("Payment initialization failed");
-                setLoading(false);
-                console.log("Payment Error:", err);
-            }
+        const onClose = () => {
+            setLoading(false);
+            console.log("Payment window closed");
+        };
+
+        const componentProps = {
+            ...config,
+            text: `Subscribe to ${plan.name}`,
+            onSuccess: (reference) => onSuccess(reference),
+            onClose: onClose,
         };
 
         return (
             <div className={styles.checkoutSection}>
                 {error && <div className={styles.error}>{error}</div>}
-                <button
+                <PaystackButton
                     disabled={loading}
                     className={`${styles.checkoutButton} ${loading ? styles.loading : ''}`}
-                    onClick={handlePayment}
-                >
+                    {...componentProps} />
 
-                    Subscribe to {plan.name}
-
-                </button>
             </div>
         );
     };
