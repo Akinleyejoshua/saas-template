@@ -18,7 +18,7 @@ const Page = () => {
         status: 'Active',
         plan: 'Professional',
         startDate: '2025-01-01',
-        endDate: '2025-01-03',
+        endDate: '2025-01-02',
         price: 79,
         features: [
             'Unlimited Projects',

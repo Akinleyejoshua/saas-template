@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@paystack/inline-js": "^2.22.1",
     "dotenv": "^16.4.7",
     "next": "15.1.3",
     "react": "^18.0.0",

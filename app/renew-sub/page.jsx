@@ -1,7 +1,8 @@
 // page.jsx
 "use client";
 // pages/dashboard.jsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePaystackPayment } from 'react-paystack';
 
 import styles from "./page.module.css";
 import Sidebar from "@/components/sidebar";
@@ -74,6 +75,85 @@ const Page = () => {
         }
     ];
 
+    const [newPlans, setNewPlans] = useState([])
+    const [rate, setRate] = useState(0);
+
+    useEffect(() => {
+        try {
+            fetch(`https://api.exchangerate-api.com/v4/latest/USD`).then(res => res.json())
+                .then(res => {
+                    const new_rate = res.rates["NGN"]
+                    const new_plans = plans.map(plan => {
+                        return {
+                            ...plan,
+                            price: (plan.price * new_rate).toFixed(2),
+                            discountedPrice: (plan.discountedPrice * new_rate).toFixed(2)
+                        }
+                    })
+
+                    setNewPlans(new_plans)
+                    setRate(new_rate);
+                }).catch(err => { })
+        } catch (err) {
+
+        }
+
+    }, [])
+
+    // Add checkout button component
+    const CheckoutButton = ({ plan }) => {
+        const [error, setError] = useState(null);
+        const [loading, setLoading] = useState(false);
+
+        const paymentConfig = {
+            reference: new Date().getTime().toString(),
+            email: "akinleyejoshua.dev@gmail.com",
+            amount: plan.discountedPrice * 100 * rate,
+            publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
+            metadata: {
+                plan_name: plan.name,
+            }
+        };
+
+        const initializePayment = usePaystackPayment(paymentConfig);
+
+        const handlePayment = () => {
+            try {
+                setLoading(true);
+                setError(null);
+                initializePayment(
+                    (reference) => {
+                        console.log("Payment successful!", reference);
+                        setLoading(false);
+                        router.push("/subscription");
+                    },
+                    () => {
+                        console.log("Payment window closed");
+                        setLoading(false);
+                    }
+                );
+            } catch (err) {
+                setError("Payment initialization failed");
+                setLoading(false);
+                console.log("Payment Error:", err);
+            }
+        };
+
+        return (
+            <div className={styles.checkoutSection}>
+                {error && <div className={styles.error}>{error}</div>}
+                <button
+                    disabled={loading}
+                    className={`${styles.checkoutButton} ${loading ? styles.loading : ''}`}
+                    onClick={handlePayment}
+                >
+
+                    Subscribe to {plan.name}
+
+                </button>
+            </div>
+        );
+    };
 
     return (
         <div className={styles.dashboard}>
@@ -125,9 +205,7 @@ const Page = () => {
                                             </li>
                                         ))}
                                     </ul>
-                                    <button className={styles.button}>
-                                        Get Started
-                                    </button>
+                                    <CheckoutButton plan={plan} />
                                 </div>
                             ))}
                         </div>
