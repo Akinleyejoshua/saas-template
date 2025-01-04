@@ -22,7 +22,15 @@
   cursor: pointer;
 }
 
-*:not(span){
+*:not(span):not(svg){
   font-size: 14px;
+}
 
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+  place-items: center;
 }

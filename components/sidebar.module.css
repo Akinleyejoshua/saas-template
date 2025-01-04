@@ -99,7 +99,7 @@
 }
 
 @media (max-width: 768px) {
-    .sidebar {
+    .sidebar.open {
         transform: translateX(-100%);
         width: 240px;
     }

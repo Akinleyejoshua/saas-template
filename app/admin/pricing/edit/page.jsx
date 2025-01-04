@@ -11,6 +11,7 @@ const Page = () => {
     const [formData, setFormData] = useState({
         planName: '',
         price: '',
+        discountedPrice: '',
         currency: 'USD',
         billingPeriod: 'monthly',
         description: '',
@@ -104,6 +105,17 @@ const Page = () => {
                                     type="number"
                                     name="price"
                                     value={formData.price}
+                                    onChange={handleChange}
+                                    placeholder="0.00"
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label>Discounted Price</label>
+                                <input
+                                    type="number"
+                                    name="discounted price"
+                                    value={formData.discountedPrice}
                                     onChange={handleChange}
                                     placeholder="0.00"
                                 />

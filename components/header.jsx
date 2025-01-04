@@ -20,17 +20,20 @@ const Header = ({ toggleSidebar }) => {
 
     return (
         <header className={styles.header}>
-            <MdOutlineArrowBackIosNew className='btn' onClick={() => router.back()} />
+            <div className="flex items-center">
+                <MdOutlineArrowBackIosNew className='btn' onClick={() => router.back()} />
 
-            <div className={styles.mobileMenu}>
-                <button
-                    className={styles.menuButton}
-                    onClick={toggleSidebar}
-                    aria-label="Toggle Menu"
-                >
-                    <MdOutlineMenu />
-                </button>
+                <div className={styles.mobileMenu}>
+                    <button
+                        className={styles.menuButton}
+                        onClick={toggleSidebar}
+                        aria-label="Toggle Menu"
+                    >
+                        <MdOutlineMenu />
+                    </button>
+                </div>
             </div>
+            
 
             {/* <div className={styles.search}>
                 <MdOutlineSearch className={styles.searchIcon} />
