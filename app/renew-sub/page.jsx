@@ -14,7 +14,7 @@ import dynamic from "next/dynamic"
 const Page = () => {
     const router = useRouter();
 
-    const PaystackButton = dynamic(() => import('react-paystack').then(mode => mode.PaystackButton), {ssr:false})
+    const PaystackButton = dynamic(() => import('react-paystack').then(mode => mode.PaystackButton), { ssr: false })
 
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const plans = [
@@ -47,6 +47,7 @@ const Page = () => {
             period: '/month',
             description: 'Ideal for growing teams',
             popular: true,
+            discountPercentage: '25',
             features: [
                 '10 Team Members',
                 '50GB Storage',
@@ -65,6 +66,7 @@ const Page = () => {
             discountedPrice: '119',
             period: '/month',
             description: 'For large organizations',
+            discountPercentage: '20',
             features: [
                 'Unlimited Team Members',
                 '500GB Storage',
